@@ -17,6 +17,8 @@ func main() {
 	// from the disk again. This makes serving HTML pages very fast.
 	router.LoadHTMLGlob("templates/*")
 
+	router.StaticFile("/favicon.ico", "./resources/favicon.ico")
+
 	// Initialize the routes
 	initializRoutes()
 
