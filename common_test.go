@@ -10,6 +10,7 @@ import (
 )
 
 var tmpArticleList []article
+var tmpUserList []user
 
 // This function is used for setup before executing the test functions
 func TestMain(m *testing.M) {
@@ -51,5 +52,15 @@ func saveLists() {
 
 // This function is used to restore the main lists from the temporary one
 func restoreLists() {
+	articleList = tmpArticleList
+}
+
+func saveLists() {
+	tmpUserList = userList
+	tmpArticleList = articleList
+}
+
+func restoreLists() {
+	userList = tmpUserList
 	articleList = tmpArticleList
 }
